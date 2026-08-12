@@ -1,0 +1,140 @@
+
+======================================================================
+GAME1
+======================================================================
+  153,929 events / 25,956 players
+  cohort: 25,956 players -> 25,422 after left guard -> 25,121 after right guard -> 25,121 with OP activity | churn rate 92.6%
+  dropped 2 uninformative columns: std_gap_hours, activity_slope
+  feature matrix 25,121 x 33
+  train 20,096 / test 5,025 | 29 features | churn rate train 92.6%
+    logistic_regression    ROC-AUC 0.7736 | PR-AUC(retained) 0.3372 (base 0.0740) | balanced acc 0.5519 | 0.2s
+    random_forest          ROC-AUC 0.7280 | PR-AUC(retained) 0.2946 (base 0.0740) | balanced acc 0.5712 | 4.7s
+    xgboost                ROC-AUC 0.7418 | PR-AUC(retained) 0.3008 (base 0.0740) | balanced acc 0.5838 | 2.8s
+  best model by ROC-AUC: logistic_regression
+  computing SHAP values...
+  SHAP top features: score_mean(ret), score_median(chu), score_worst(chu), session_count(ret), max_gap_hours(ret), score_std(chu)
+  fairness [engagement_tier]: AUC gap 0.250 (worst light 0.521 vs best heavy 0.771), FNR gap 0.012
+  fairness [skill_tier]: AUC gap 0.054 (worst mid 0.736 vs best high 0.790), FNR gap 0.006
+  training LSTM on daily sequences...
+    epoch   1 | loss 0.1043 | val ROC-AUC 0.8042
+    epoch   5 | loss 0.0827 | val ROC-AUC 0.8086
+    epoch  10 | loss 0.0818 | val ROC-AUC 0.8102
+    epoch  15 | loss 0.0814 | val ROC-AUC 0.8105
+    early stop at epoch 17 (best val AUC 0.8107)
+    lstm                   ROC-AUC 0.7834 | PR-AUC(retained) 0.3538 | balanced acc 0.5622
+  OP/CP window sensitivity:
+  cohort: 25,956 players -> 25,676 after left guard -> 25,469 after right guard -> 25,469 with OP activity | churn rate 91.1%
+  dropped 2 uninformative columns: std_gap_hours, activity_slope
+  OP3/CP7: 25,469 players | churn 91.1% | ROC-AUC 0.7508
+  cohort: 25,956 players -> 25,422 after left guard -> 25,121 after right guard -> 25,121 with OP activity | churn rate 92.6%
+  dropped 2 uninformative columns: std_gap_hours, activity_slope
+  OP5/CP10: 25,121 players | churn 92.6% | ROC-AUC 0.7418
+  cohort: 25,956 players -> 25,252 after left guard -> 24,715 after right guard -> 24,715 with OP activity | churn rate 93.2%
+  dropped 2 uninformative columns: std_gap_hours, activity_slope
+  OP7/CP14: 24,715 players | churn 93.2% | ROC-AUC 0.7559
+  cohort: 25,956 players -> 25,422 after left guard -> 24,525 after right guard -> 24,525 with OP activity | churn rate 90.0%
+  dropped 2 uninformative columns: std_gap_hours, activity_slope
+  OP5/CP30: 24,525 players | churn 90.0% | ROC-AUC 0.7259
+  game1 finished in 139s
+
+======================================================================
+GAME2
+======================================================================
+  7,620,167 events / 79,436 players
+  cohort: 79,436 players -> 79,435 after left guard -> 79,410 after right guard -> 79,410 with OP activity | churn rate 75.5%
+  dropped 1 uninformative columns: activity_slope
+  feature matrix 79,410 x 52
+  train 63,528 / test 15,882 | 47 features | churn rate train 75.5%
+    logistic_regression    ROC-AUC 0.7585 | PR-AUC(retained) 0.5762 (base 0.2449) | balanced acc 0.6216 | 1.2s
+    random_forest          ROC-AUC 0.7574 | PR-AUC(retained) 0.5770 (base 0.2449) | balanced acc 0.6327 | 33.0s
+    xgboost                ROC-AUC 0.7581 | PR-AUC(retained) 0.5788 (base 0.2449) | balanced acc 0.6429 | 16.3s
+  best model by ROC-AUC: logistic_regression
+  computing SHAP values...
+  SHAP top features: win_ratio(chu), attempt_count(ret), fail_ratio(chu), quit_ratio(chu), complete_ratio(ret), day0_plays(chu)
+  fairness [skill_tier]: AUC gap 0.116 (worst high 0.665 vs best low 0.781), FNR gap 0.092
+  fairness [spend_tier]: AUC gap 0.107 (worst low_spender 0.675 vs best non_spender 0.782), FNR gap 0.074
+  fairness [engagement_tier]: AUC gap 0.097 (worst medium 0.661 vs best heavy 0.758), FNR gap 0.090
+  fairness [device_family]: AUC gap 0.057 (worst iPod 0.722 vs best iPhone 0.779), FNR gap 0.005
+  fairness [platform]: AUC gap 0.006 (worst Android 0.755 vs best iOS 0.761), FNR gap 0.003
+  training LSTM on daily sequences...
+    epoch   1 | loss 0.3098 | val ROC-AUC 0.7208
+    epoch   5 | loss 0.2871 | val ROC-AUC 0.7372
+    epoch  10 | loss 0.2866 | val ROC-AUC 0.7382
+    epoch  15 | loss 0.2866 | val ROC-AUC 0.7379
+    early stop at epoch 16 (best val AUC 0.7383)
+    lstm                   ROC-AUC 0.7441 | PR-AUC(retained) 0.5679 | balanced acc 0.6296
+  OP/CP window sensitivity:
+  cohort: 79,436 players -> 79,435 after left guard -> 79,416 after right guard -> 79,416 with OP activity | churn rate 71.1%
+  dropped 1 uninformative columns: activity_slope
+  OP3/CP7: 79,416 players | churn 71.1% | ROC-AUC 0.7417
+  cohort: 79,436 players -> 79,435 after left guard -> 79,410 after right guard -> 79,410 with OP activity | churn rate 75.5%
+  dropped 1 uninformative columns: activity_slope
+  OP5/CP10: 79,410 players | churn 75.5% | ROC-AUC 0.7581
+  cohort: 79,436 players -> 79,435 after left guard -> 79,397 after right guard -> 79,397 with OP activity | churn rate 78.3%
+  dropped 1 uninformative columns: activity_slope
+  OP7/CP14: 79,397 players | churn 78.3% | ROC-AUC 0.7566
+  cohort: 79,436 players -> 79,435 after left guard -> 79,349 after right guard -> 79,349 with OP activity | churn rate 70.2%
+  dropped 1 uninformative columns: activity_slope
+  OP5/CP30: 79,349 players | churn 70.2% | ROC-AUC 0.7530
+  game2 finished in 874s
+
+======================================================================
+GAME3
+======================================================================
+  3,516,753 events / 91,094 players
+  cohort: 26,868 players -> 25,705 after left guard -> 24,128 after right guard -> 24,128 with OP activity | churn rate 60.0%
+  dropped 1 uninformative columns: activity_slope
+  feature matrix 24,128 x 40
+  train 19,302 / test 4,826 | 36 features | churn rate train 60.0%
+    logistic_regression    ROC-AUC 0.8056 | PR-AUC(retained) 0.7689 (base 0.3999) | balanced acc 0.7262 | 0.2s
+    random_forest          ROC-AUC 0.8034 | PR-AUC(retained) 0.7759 (base 0.3999) | balanced acc 0.7234 | 8.0s
+    xgboost                ROC-AUC 0.8033 | PR-AUC(retained) 0.7750 (base 0.3999) | balanced acc 0.7335 | 3.3s
+  best model by ROC-AUC: logistic_regression
+  computing SHAP values...
+  SHAP top features: recency_hours(chu), consecutive_play_ratio(ret), day4_plays(ret), score_mean(ret), day0_plays(chu), active_duration_hours(chu)
+  fairness [engagement_tier]: AUC gap 0.242 (worst light 0.575 vs best heavy 0.817), FNR gap 0.245
+  fairness [skill_tier]: AUC gap 0.180 (worst low 0.648 vs best mid 0.828), FNR gap 0.122
+  training LSTM on daily sequences...
+    epoch   1 | loss 0.5381 | val ROC-AUC 0.7827
+    epoch   5 | loss 0.4233 | val ROC-AUC 0.8001
+    early stop at epoch 9 (best val AUC 0.8014)
+    lstm                   ROC-AUC 0.8053 | PR-AUC(retained) 0.7743 | balanced acc 0.7291
+  OP/CP window sensitivity:
+  cohort: 26,868 players -> 26,478 after left guard -> 25,396 after right guard -> 25,396 with OP activity | churn rate 57.8%
+  dropped 1 uninformative columns: activity_slope
+  OP3/CP7: 25,396 players | churn 57.8% | ROC-AUC 0.7850
+  cohort: 26,868 players -> 25,705 after left guard -> 24,128 after right guard -> 24,128 with OP activity | churn rate 60.0%
+  dropped 1 uninformative columns: activity_slope
+  OP5/CP10: 24,128 players | churn 60.0% | ROC-AUC 0.8033
+  cohort: 26,868 players -> 25,261 after left guard -> 23,108 after right guard -> 23,108 with OP activity | churn rate 61.0%
+  OP7/CP14: 23,108 players | churn 61.0% | ROC-AUC 0.8124
+  cohort: 26,868 players -> 25,705 after left guard -> 22,276 after right guard -> 22,276 with OP activity | churn rate 52.0%
+  dropped 1 uninformative columns: activity_slope
+  OP5/CP30: 22,276 players | churn 52.0% | ROC-AUC 0.7619
+  game3 finished in 171s
+
+======================================================================
+SUMMARY
+======================================================================
+ game  op_days  cp_days  players  churners  churn_rate  median_events_op
+game1        5       10    25121     23261    0.925958               2.0
+game2        5       10    79410     59960    0.755069              31.0
+game3        5       10    24128     14477    0.600008               4.0
+
+ game               model  roc_auc  pr_auc_retained  baseline_pr_retained  balanced_accuracy
+game1 logistic_regression   0.7736           0.3372                0.0740             0.5519
+game1       random_forest   0.7280           0.2946                0.0740             0.5712
+game1             xgboost   0.7418           0.3008                0.0740             0.5838
+game1                lstm   0.7834           0.3538                0.0740             0.5622
+game2 logistic_regression   0.7585           0.5762                0.2449             0.6216
+game2       random_forest   0.7574           0.5770                0.2449             0.6327
+game2             xgboost   0.7581           0.5788                0.2449             0.6429
+game2                lstm   0.7441           0.5679                0.2449             0.6296
+game3 logistic_regression   0.8056           0.7689                0.3999             0.7262
+game3       random_forest   0.8034           0.7759                0.3999             0.7234
+game3             xgboost   0.8033           0.7750                0.3999             0.7335
+game3                lstm   0.8053           0.7743                0.3999             0.7291
+
+Total runtime 1185s
+Tables  -> D:\Player Churn\player-churn-ml\outputs\tables
+Figures -> D:\Player Churn\player-churn-ml\outputs\figures

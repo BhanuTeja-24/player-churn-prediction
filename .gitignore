@@ -1,0 +1,41 @@
+# ---- Data -----------------------------------------------------------------
+# Raw archives are 814 MB and redistributable from Zenodo instead:
+#   https://zenodo.org/record/166035  (CC-BY 4.0)
+# Derived tables are reproducible with `python -m src.etl --game all`.
+data/raw/
+data/interim/
+data/processed/
+
+# ---- Trained models -------------------------------------------------------
+# ~400 MB of joblib artefacts; game2_random_forest.joblib alone exceeds
+# GitHub's 100 MB per-file hard limit. Regenerate with `python run_pipeline.py`.
+outputs/models/
+
+# ---- Python ---------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*.so
+.Python
+build/
+dist/
+*.egg-info/
+.venv/
+venv/
+env/
+
+# ---- Jupyter --------------------------------------------------------------
+.ipynb_checkpoints/
+
+# ---- Tooling / OS ---------------------------------------------------------
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.vscode/
+.idea/
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Dissertation draft — kept private until after marking
+reports/*.docx
+reports/*.pdf

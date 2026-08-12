@@ -1,0 +1,4 @@
+game,events,players,first,last,span_days,median_events_per_player,purchase_events,outcome_events,authenticated
+game1,153929,25956,2015-01-13,2016-05-24,496,2.0,0,0,1.0
+game2,7620167,79436,2014-06-15,2014-09-30,107,37.0,1750493,2436203,1.0
+game3,3516753,91094,2015-05-25,2015-12-25,213,4.0,0,2743061,0.664
