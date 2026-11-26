@@ -1,0 +1,10 @@
+{
+  "games": [
+    "game1",
+    "game2",
+    "game3"
+  ],
+  "op_days": 5,
+  "cp_days": 10,
+  "runtime_seconds": 1312.0
+}

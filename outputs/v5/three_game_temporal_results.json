@@ -1,0 +1,248 @@
+{
+  "game1": {
+    "legacy_count_mismatches": 0,
+    "cohort": 25121,
+    "omitted": 589,
+    "train": {
+      "players": 14630,
+      "retained": 1232,
+      "first": "2015-01-18",
+      "last": "2015-09-03"
+    },
+    "validation": {
+      "players": 4877,
+      "retained": 284,
+      "first": "2015-09-03",
+      "last": "2015-12-27"
+    },
+    "test": {
+      "players": 5025,
+      "retained": 307,
+      "first": "2016-01-06",
+      "last": "2016-05-09"
+    },
+    "common": {
+      "n": 5025,
+      "retained": 307,
+      "retained_correct": 172,
+      "roc_auc": 0.7732296989973945,
+      "balanced_accuracy": 0.7143185085050945,
+      "brier": 0.049983026676469866,
+      "average_precision_retained": 0.316229034004478,
+      "threshold": 0.9386953417538958
+    },
+    "recency": {
+      "n": 5025,
+      "retained": 307,
+      "retained_correct": 206,
+      "roc_auc": 0.7811072156948301,
+      "balanced_accuracy": 0.7363103120214634,
+      "brier": 0.05051497790057389,
+      "average_precision_retained": 0.30152953952840245,
+      "threshold": 0.9688299119780984
+    },
+    "auc_difference_interval": [
+      -0.025652743046589883,
+      0.008248505619203117
+    ],
+    "constant_brier": 0.05789633549703008,
+    "light_max": 1,
+    "heavy_min": 4,
+    "light": {
+      "n": 2401,
+      "retained": 51,
+      "retained_correct": 0,
+      "roc_auc": 0.5278473091364205,
+      "balanced_accuracy": 0.5,
+      "brier": 0.020809137882469686,
+      "average_precision_retained": 0.02387473091794104,
+      "threshold": 0.9386953417538958
+    },
+    "heavy": {
+      "n": 1149,
+      "retained": 181,
+      "retained_correct": 147,
+      "roc_auc": 0.7664261905849048,
+      "balanced_accuracy": 0.6808707364960505,
+      "brier": 0.11388807145989946,
+      "average_precision_retained": 0.4522362967400775,
+      "threshold": 0.9386953417538958
+    },
+    "engagement_gap_interval": [
+      0.14755319048810822,
+      0.3286840087136815
+    ],
+    "one_event_common": {
+      "n": 2401,
+      "retained": 51,
+      "retained_correct": 0,
+      "roc_auc": 0.5278473091364205,
+      "balanced_accuracy": 0.5,
+      "brier": 0.020809137882469686,
+      "average_precision_retained": 0.02387473091794104,
+      "threshold": 0.9386953417538958
+    },
+    "one_event_specialist": {
+      "n": 2401,
+      "retained": 51,
+      "retained_correct": 6,
+      "roc_auc": 0.5398498122653316,
+      "balanced_accuracy": 0.5079724655819775,
+      "brier": 0.0207852470915485,
+      "average_precision_retained": 0.03212948501993183,
+      "threshold": 0.9792168469472212
+    },
+    "one_event_specialist_auc_interval": [
+      -0.031102106800166934,
+      0.056981748018356274
+    ]
+  },
+  "game2": {
+    "legacy_count_mismatches": 0,
+    "cohort": 79410,
+    "omitted": 46253,
+    "train": {
+      "players": 12956,
+      "retained": 3665,
+      "first": "2014-07-02",
+      "last": "2014-07-10"
+    },
+    "validation": {
+      "players": 4319,
+      "retained": 1271,
+      "first": "2014-07-10",
+      "last": "2014-07-11"
+    },
+    "test": {
+      "players": 15882,
+      "retained": 2645,
+      "first": "2014-07-21",
+      "last": "2014-09-15"
+    },
+    "common": {
+      "n": 15882,
+      "retained": 2645,
+      "retained_correct": 1091,
+      "roc_auc": 0.6817159125913459,
+      "balanced_accuracy": 0.6411176896746289,
+      "brier": 0.1300835937504124,
+      "average_precision_retained": 0.3845547966206422,
+      "threshold": 0.6363339585990933
+    },
+    "recency": {
+      "n": 15882,
+      "retained": 2645,
+      "retained_correct": 1136,
+      "roc_auc": 0.6741113619625805,
+      "balanced_accuracy": 0.6423719073519791,
+      "brier": 0.1332094148455142,
+      "average_precision_retained": 0.3574035919662959,
+      "threshold": 0.6491144303011152
+    },
+    "auc_difference_interval": [
+      0.004146657497394177,
+      0.011074938095985514
+    ],
+    "constant_brier": 0.15233986512971628,
+    "light_max": 16,
+    "heavy_min": 78,
+    "light": {
+      "n": 4806,
+      "retained": 615,
+      "retained_correct": 46,
+      "roc_auc": 0.4802338732048738,
+      "balanced_accuracy": 0.527376899395336,
+      "brier": 0.11107732828469781,
+      "average_precision_retained": 0.17005086002730882,
+      "threshold": 0.6363339585990933
+    },
+    "heavy": {
+      "n": 2645,
+      "retained": 887,
+      "retained_correct": 723,
+      "roc_auc": 0.7438727517818369,
+      "balanced_accuracy": 0.6606821064728419,
+      "brier": 0.19796203690892528,
+      "average_precision_retained": 0.5960976340176874,
+      "threshold": 0.6363339585990933
+    },
+    "engagement_gap_interval": [
+      0.22876122424270984,
+      0.29868908620604706
+    ]
+  },
+  "game3": {
+    "legacy_count_mismatches": 2371,
+    "cohort": 24128,
+    "omitted": 1132,
+    "train": {
+      "players": 13627,
+      "retained": 6084,
+      "first": "2015-05-30",
+      "last": "2015-08-30"
+    },
+    "validation": {
+      "players": 4543,
+      "retained": 1531,
+      "first": "2015-08-30",
+      "last": "2015-10-15"
+    },
+    "test": {
+      "players": 4826,
+      "retained": 1616,
+      "first": "2015-10-25",
+      "last": "2015-12-10"
+    },
+    "common": {
+      "n": 4826,
+      "retained": 1616,
+      "retained_correct": 1181,
+      "roc_auc": 0.8114252722001172,
+      "balanced_accuracy": 0.7663429952808365,
+      "brier": 0.1494277946706094,
+      "average_precision_retained": 0.7393039007281825,
+      "threshold": 0.6741059718751267
+    },
+    "recency": {
+      "n": 4826,
+      "retained": 1616,
+      "retained_correct": 1209,
+      "roc_auc": 0.8180172573332098,
+      "balanced_accuracy": 0.7667509099040746,
+      "brier": 0.15003504547659052,
+      "average_precision_retained": 0.7346572685449326,
+      "threshold": 0.7352974553196328
+    },
+    "auc_difference_interval": [
+      -0.013181878643471787,
+      -0.00025617799805683174
+    ],
+    "constant_brier": 0.23518404540502477,
+    "light_max": 1,
+    "heavy_min": 8,
+    "light": {
+      "n": 1166,
+      "retained": 139,
+      "retained_correct": 0,
+      "roc_auc": 0.4715417539386212,
+      "balanced_accuracy": 0.5,
+      "brier": 0.10563218340935146,
+      "average_precision_retained": 0.11290409933237502,
+      "threshold": 0.6741059718751267
+    },
+    "heavy": {
+      "n": 1562,
+      "retained": 927,
+      "retained_correct": 862,
+      "roc_auc": 0.8273594441471515,
+      "balanced_accuracy": 0.680688700320227,
+      "brier": 0.1670804055466223,
+      "average_precision_retained": 0.8656595385463406,
+      "threshold": 0.6741059718751267
+    },
+    "engagement_gap_interval": [
+      0.30504684315026187,
+      0.4042458837298598
+    ]
+  }
+}

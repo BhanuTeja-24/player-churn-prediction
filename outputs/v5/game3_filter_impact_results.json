@@ -1,0 +1,104 @@
+{
+  "cohort_players": 24128,
+  "count_mismatches": 2371,
+  "test_count_mismatches": 668,
+  "split_counts": [
+    13627,
+    4543,
+    4826
+  ],
+  "light_events_at_most": 1,
+  "heavy_events_at_least": 8,
+  "comparison": {
+    "all": {
+      "legacy": {
+        "n": 4826,
+        "retained": 1616,
+        "retained_correct": 1180,
+        "roc_auc": 0.802572888714105,
+        "balanced_accuracy": 0.7618279818636069,
+        "brier": 0.15299167621302923,
+        "average_precision_retained": 0.7215820170990749,
+        "threshold": 0.6876016577760585
+      },
+      "corrected": {
+        "n": 4826,
+        "retained": 1616,
+        "retained_correct": 1181,
+        "roc_auc": 0.8114252722001172,
+        "balanced_accuracy": 0.7663429952808365,
+        "brier": 0.1494277946706094,
+        "average_precision_retained": 0.7393039007281825,
+        "threshold": 0.6741059718751267
+      },
+      "auc_delta_interval": [
+        0.003530198887295266,
+        0.014302236590481427
+      ],
+      "auc_delta": 0.008852383486012139
+    },
+    "light": {
+      "legacy": {
+        "n": 1166,
+        "retained": 139,
+        "retained_correct": 1,
+        "roc_auc": 0.47629822140340305,
+        "balanced_accuracy": 0.4987285731298116,
+        "brier": 0.10842121778314316,
+        "average_precision_retained": 0.11350221661208193,
+        "threshold": 0.6876016577760585
+      },
+      "corrected": {
+        "n": 1166,
+        "retained": 139,
+        "retained_correct": 0,
+        "roc_auc": 0.4715417539386212,
+        "balanced_accuracy": 0.5,
+        "brier": 0.10563218340935146,
+        "average_precision_retained": 0.11290409933237502,
+        "threshold": 0.6741059718751267
+      },
+      "auc_delta_interval": [
+        -0.02520481180780785,
+        0.013760043571763816
+      ],
+      "auc_delta": -0.004756467464781866
+    },
+    "heavy": {
+      "legacy": {
+        "n": 1562,
+        "retained": 927,
+        "retained_correct": 862,
+        "roc_auc": 0.8142055058651649,
+        "balanced_accuracy": 0.6728146845721954,
+        "brier": 0.1726527128521707,
+        "average_precision_retained": 0.853399837673436,
+        "threshold": 0.6876016577760585
+      },
+      "corrected": {
+        "n": 1562,
+        "retained": 927,
+        "retained_correct": 862,
+        "roc_auc": 0.8273594441471515,
+        "balanced_accuracy": 0.680688700320227,
+        "brier": 0.1670804055466223,
+        "average_precision_retained": 0.8656595385463406,
+        "threshold": 0.6741059718751267
+      },
+      "auc_delta_interval": [
+        0.00461827587085602,
+        0.022027198056553548
+      ],
+      "auc_delta": 0.013153938281986521
+    }
+  },
+  "bootstrap_replicates": 2000,
+  "bootstrap_seed": 42,
+  "packages": {
+    "numpy": "2.4.2",
+    "pandas": "3.0.3",
+    "scipy": "1.17.0",
+    "scikit-learn": "1.8.0",
+    "pyarrow": "23.0.1"
+  }
+}

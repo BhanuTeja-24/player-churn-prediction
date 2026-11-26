@@ -4,10 +4,36 @@ Machine learning pipeline for predicting player churn from raw behavioural
 logs, explaining the drivers of disengagement with SHAP, and auditing whether
 the resulting model performs equally well for different kinds of player.
 
+## V5 evaluation notebooks
+
+The eleven notebooks under [notebooks](notebooks) contain saved outputs. The
+original random-split results remain available in the earlier notebooks and
+[outputs/tables](outputs/tables). The V5 outputs are grouped separately in
+[outputs/v5](outputs/v5).
+
+| Notebook | Evaluation | Saved results |
+|---|---|---|
+| [08](notebooks/08_game1_temporal_validation.ipynb) | Game 1 model comparison on later players | [Game 1 metrics](outputs/v5/game1_temporal_results.json) |
+| [09](notebooks/09_cross_game_temporal_validation.ipynb) | Later-player comparison across all three games | [Cross-game metrics](outputs/v5/three_game_temporal_results.json) |
+| [10](notebooks/10_game3_filter_impact.ipynb) | Matched comparison of Game 3 account filters | [Filter comparison](outputs/v5/game3_filter_impact_results.json) |
+
+On the same 4,826 Game 3 test players, applying the account filter consistently
+raised overall ROC-AUC from 0.8026 to 0.8114. The confidence interval for the
+change among one-event players includes zero. The
+[full random-split rerun](outputs/v5/three_game_rerun) includes the environment
+and a comparison with the originally published metrics.
+
+To reproduce the notebooks, open them with `notebooks/` as the working
+directory. Run [Notebook 00](notebooks/00_setup.ipynb) to download the pinned
+pipeline and verify the data. Install the pinned checkout's dependencies with
+`python -m pip install -r .pipeline/requirements.txt`, then use
+[Notebook 01](notebooks/01_data_preparation.ipynb) to extract the data. The
+notebooks use the same local `.pipeline` checkout for imports and outputs.
+
 ## Data
 
 Raw play logs from three commercial games, released under CC-BY 4.0 alongside
-Perianez et al., *Churn prediction of mobile and online casual games using play
+Kim, Choi, Lee and Rhee, *Churn prediction of mobile and online casual games using play
 log data*, PLOS ONE 12(7), 2017.
 
 - Dataset: <https://zenodo.org/record/166035>
@@ -115,5 +141,5 @@ since the operationally useful question is which players will *stay*.
 
 ## Licence and attribution
 
-The data is CC-BY 4.0 and must be attributed to Perianez et al. (2017). This
+The data is CC-BY 4.0 and must be attributed to Kim, Choi, Lee and Rhee (2017). This
 code is coursework built on top of that release.

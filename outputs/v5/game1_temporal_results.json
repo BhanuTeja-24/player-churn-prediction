@@ -1,0 +1,199 @@
+{
+  "packages": {
+    "numpy": "2.4.2",
+    "pandas": "3.0.3",
+    "scikit-learn": "1.8.0",
+    "xgboost": "3.2.0",
+    "pyarrow": "23.0.1"
+  },
+  "python": "3.11.9",
+  "bootstrap_seed": 42,
+  "bootstrap_replicates": 2000,
+  "events": 153929,
+  "eligible": 25121,
+  "columns": [
+    "play_count",
+    "active_days",
+    "active_duration_hours",
+    "recency_hours",
+    "plays_per_active_day",
+    "weekend_ratio",
+    "night_ratio",
+    "hour_spread",
+    "mean_gap_hours",
+    "max_gap_hours",
+    "session_count",
+    "mean_session_minutes",
+    "max_session_minutes",
+    "mean_plays_per_session",
+    "total_playtime_minutes",
+    "day0_plays",
+    "day1_plays",
+    "day2_plays",
+    "day3_plays",
+    "day4_plays",
+    "first_vs_last_day_ratio",
+    "consecutive_play_ratio",
+    "score_best",
+    "score_mean",
+    "score_worst",
+    "score_std",
+    "score_median",
+    "score_slope",
+    "score_improvement"
+  ],
+  "purged": 1409,
+  "splits": [
+    {
+      "n": 14548,
+      "retained": 1228,
+      "first": "2015-01-18",
+      "last": "2015-08-30"
+    },
+    {
+      "n": 4139,
+      "retained": 233,
+      "first": "2015-09-14",
+      "last": "2015-12-22"
+    },
+    {
+      "n": 5025,
+      "retained": 307,
+      "first": "2016-01-06",
+      "last": "2016-05-09"
+    }
+  ],
+  "prevalence_baseline": 0.9155897717899367,
+  "baseline_brier": 0.05790560799543439,
+  "baseline_ap": 0.06109452736318408,
+  "models": {
+    "logistic_regression": {
+      "n": 5025,
+      "retained": 307,
+      "auc": 0.7832329715152861,
+      "average_precision_retained": 0.3261235131192991,
+      "balanced_accuracy": 0.7331089058053363,
+      "retained_correct": 200,
+      "churn_correct": 3844,
+      "fpr": 0.3485342019543974,
+      "fnr": 0.18524798643493007,
+      "threshold": 0.9504016747326276,
+      "brier_raw": 0.15579548177132393,
+      "brier_calibrated": 0.04966654159426571,
+      "validation_auc": 0.7876552854747512
+    },
+    "random_forest": {
+      "n": 5025,
+      "retained": 307,
+      "auc": 0.7368871450802457,
+      "average_precision_retained": 0.2901279239203027,
+      "balanced_accuracy": 0.671375686434792,
+      "retained_correct": 166,
+      "churn_correct": 3784,
+      "fpr": 0.4592833876221498,
+      "fnr": 0.19796523950826622,
+      "threshold": 0.9349555305361479,
+      "brier_raw": 0.07679016227818246,
+      "brier_calibrated": 0.05048185608268009,
+      "validation_auc": 0.7311954317007618
+    },
+    "xgboost": {
+      "n": 5025,
+      "retained": 307,
+      "auc": 0.7428943556660818,
+      "average_precision_retained": 0.28022580913516837,
+      "balanced_accuracy": 0.6883769001661113,
+      "retained_correct": 159,
+      "churn_correct": 4052,
+      "fpr": 0.4820846905537459,
+      "fnr": 0.14116150911403136,
+      "threshold": 0.9284376414791211,
+      "brier_raw": 0.11635328084230423,
+      "brier_calibrated": 0.05105066311807502,
+      "validation_auc": 0.7281265314284835
+    },
+    "recency_only": {
+      "n": 5025,
+      "retained": 307,
+      "auc": 0.7811072156948301,
+      "average_precision_retained": 0.30152953952840245,
+      "balanced_accuracy": 0.7363103120214634,
+      "retained_correct": 206,
+      "churn_correct": 3782,
+      "fpr": 0.3289902280130293,
+      "fnr": 0.19838914794404408,
+      "threshold": 0.9694885342796923,
+      "brier_raw": 0.16324624944047073,
+      "brier_calibrated": 0.0505365842454327,
+      "validation_auc": 0.7820421537021289
+    }
+  },
+  "engagement_sensitivity": {
+    "3": {
+      "light": {
+        "n": 2401,
+        "retained": 51,
+        "auc": 0.5386733416770964,
+        "average_precision_retained": 0.03143918456003585,
+        "balanced_accuracy": 0.4997872340425532,
+        "retained_correct": 0,
+        "churn_correct": 2349,
+        "fpr": 1.0,
+        "fnr": 0.000425531914893617
+      },
+      "heavy": {
+        "n": 1611,
+        "retained": 215,
+        "auc": 0.7679916039181716,
+        "average_precision_retained": 0.42060505923898167,
+        "balanced_accuracy": 0.6659009129073099,
+        "retained_correct": 187,
+        "churn_correct": 645,
+        "fpr": 0.13023255813953488,
+        "fnr": 0.5379656160458453
+      },
+      "gap_interval": [
+        0.1444370575403013,
+        0.3169936005389112
+      ]
+    },
+    "4": {
+      "light": {
+        "n": 2401,
+        "retained": 51,
+        "auc": 0.5386733416770964,
+        "average_precision_retained": 0.03143918456003585,
+        "balanced_accuracy": 0.4997872340425532,
+        "retained_correct": 0,
+        "churn_correct": 2349,
+        "fpr": 1.0,
+        "fnr": 0.000425531914893617
+      },
+      "heavy": {
+        "n": 1149,
+        "retained": 181,
+        "auc": 0.7623339116935299,
+        "average_precision_retained": 0.45953687949346583,
+        "balanced_accuracy": 0.6340035843112186,
+        "retained_correct": 165,
+        "churn_correct": 345,
+        "fpr": 0.08839779005524862,
+        "fnr": 0.643595041322314
+      },
+      "gap_interval": [
+        0.13762643794761037,
+        0.30852224448759114
+      ]
+    }
+  },
+  "paired_intervals": {
+    "roc_auc_full_minus_recency": [
+      -0.010981196139809659,
+      0.015039636129149665
+    ],
+    "brier_prevalence_minus_full": [
+      0.006417059951536124,
+      0.009997343717809274
+    ]
+  }
+}
